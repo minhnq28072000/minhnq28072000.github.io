@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhận xét thường xuyên | Lớp 5A</title>
+<style>
+:root{--navy:#24476c;--blue:#4d88bd;--sky:#eaf3fb;--mint:#eaf5ee;--gold:#fff4dc;--rose:#fceef1;--ink:#26384a;--muted:#687b8e;--line:#dce5ed;--bg:#f3f6fa;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,"DejaVu Sans",sans-serif;color:var(--ink);line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding:22px}
+.hero{background:linear-gradient(125deg,#203d5e,#477eae);color:white;border-radius:20px;padding:26px 30px;margin-bottom:18px;position:relative;overflow:hidden}
+.hero:after{content:"✦  ✧  ✦";position:absolute;right:24px;top:18px;font-size:32px;color:#ffffff55;letter-spacing:10px}
+.kicker{font-size:12px;letter-spacing:1.5px;font-weight:bold;color:#d9e9f8}.hero h1{font-size:30px;line-height:1.15;margin:7px 0}.hero p{margin:8px 0 0;color:#e4eef7}
+.tabs{display:flex;gap:8px;margin:16px 0}.tab{border:1px solid var(--line);background:white;color:var(--navy);padding:10px 16px;border-radius:999px;font-weight:bold;cursor:pointer}.tab.active{background:var(--navy);color:white}
+.layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);gap:18px;align-items:start}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 14px #233e5b0a;margin-bottom:16px}
+h2{font-size:18px;color:var(--navy);margin:0 0 14px}h3{font-size:15px;margin:0 0 8px;color:var(--navy)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}label{display:block;font-size:13px;font-weight:bold;color:#41586e;margin-bottom:6px}
+input,select,textarea{width:100%;border:1px solid #ccd8e3;border-radius:9px;padding:10px 11px;font:inherit;color:var(--ink);background:#fff}textarea{min-height:76px;resize:vertical}
+.skill{border:1px solid var(--line);border-radius:12px;padding:13px;margin:10px 0;background:#fcfdff}.skillhead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.skillhead strong{color:var(--navy)}.skill small{display:block;color:var(--muted);margin:3px 0 10px}
+.ratings{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}.rate{border:1px solid var(--line);border-radius:8px;background:white;padding:8px 4px;font-size:12px;cursor:pointer;color:#52677b}.rate.selected{font-weight:bold;box-shadow:inset 0 0 0 1px currentColor}.rate[data-level="0"].selected{background:#dff2e5;border-color:#39945a;color:#21683b}.rate[data-level="1"].selected{background:#fff1c9;border-color:#d4a12c;color:#805b0b}.rate[data-level="2"].selected{background:#fbe0e8;border-color:#d97998;color:#963e5c}.rate[data-level="3"].selected{background:#f8dada;border-color:#c94c4c;color:#922e2e}.rate[data-level="4"].selected{background:#edf0f3;border-color:#9aa7b4;color:#536273}
+.actions{display:flex;flex-wrap:wrap;gap:8px}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:bold;cursor:pointer}.primary{background:var(--navy);color:white}.secondary{background:#eaf1f7;color:var(--navy)}.green{background:#e6f4ea;color:#28623d}.danger{background:#fff0f0;color:#9d3434}
+.note{font-size:12px;color:var(--muted);background:#f7f9fb;padding:10px;border-radius:9px}.legend{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0}.legend span{padding:5px 9px;border-radius:999px;font-size:11px;font-weight:bold}.lg-green{background:#dff2e5;color:#21683b}.lg-yellow{background:#fff1c9;color:#805b0b}.lg-pink{background:#fbe0e8;color:#963e5c}.lg-red{background:#f8dada;color:#922e2e}.lg-gray{background:#edf0f3;color:#536273}.suggestions{display:flex;flex-wrap:wrap;gap:7px;margin:7px 0 10px}.suggestion{border:1px solid #cddbe8;background:#f4f8fc;color:#315a7e;border-radius:999px;padding:7px 10px;font-size:12px;cursor:pointer}.suggestion:hover{background:#e5f0fa}
+.preview{position:sticky;top:14px}.paper{border:1px solid #d9e2eb;border-radius:12px;padding:22px;background:white;box-shadow:0 6px 22px #26384a12}
+.paperhead{text-align:center;background:var(--navy);color:white;padding:17px;border-radius:10px;margin-bottom:14px}.paperhead .mini{font-size:10px;letter-spacing:1.2px;color:#d9e8f5}.paperhead h2{color:white;font-size:21px;margin:5px 0}.paperhead p{font-size:12px;margin:0;color:#e7f0f8}
+.greeting{background:var(--sky);padding:12px;border-radius:9px;font-size:13px;margin:10px 0}
+.meta{display:flex;justify-content:space-between;gap:10px;font-size:12px;border-bottom:1px solid var(--line);padding:7px 0;margin-bottom:10px}
+.pillrow{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}.pill{background:#eef3f8;border-radius:999px;padding:5px 9px;font-size:11px}
+.block{border-radius:9px;padding:11px;margin:9px 0}.block h3{font-size:13px;margin-bottom:5px}.block p{font-size:12px;margin:0;white-space:pre-wrap}.good{background:var(--mint)}.improve{background:var(--gold)}.strategy{background:var(--sky)}.message{background:var(--rose)}
+.footer{text-align:center;color:var(--muted);font-size:11px;margin-top:13px}
+.record{padding:10px;border:1px solid var(--line);border-radius:9px;margin:8px 0;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.hidden{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.preview{position:static}.wrap{padding:12px}.hero{padding:22px}.hero h1{font-size:25px}}
+@media print{
+ @page{size:A4;margin:12mm}
+ body{background:white}.wrap{max-width:none;padding:0}.hero,.tabs,.editor,.no-print,.history{display:none!important}
+ .layout{display:block}.preview{position:static}.panel.preview{border:0;padding:0;box-shadow:none;margin:0}.paper{border:0;box-shadow:none;padding:0}
+ .paperhead{print-color-adjust:exact;-webkit-print-color-adjust:exact}.block,.greeting,.pill{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+}
+
+/* Accessibility update: larger, easier-to-read typography */
+body{font-size:16px;line-height:1.6}
+.kicker{font-size:14px;letter-spacing:1.2px}
+.hero h1{font-size:34px}
+.hero p{font-size:17px;line-height:1.6}
+.tab{font-size:16px;padding:12px 18px}
+.panel{padding:22px}
+h2{font-size:21px}
+h3{font-size:18px}
+label{font-size:16px;margin-bottom:7px}
+input,select,textarea{font-size:16px;padding:12px 13px;line-height:1.5}
+textarea{min-height:92px}
+.skill{padding:16px;margin:12px 0}
+.skillhead strong{font-size:16px;line-height:1.5}
+.skill small{font-size:14px;line-height:1.5}
+.ratings{gap:8px}
+.rate{font-size:14px;padding:10px 6px;line-height:1.35;min-height:42px}
+.btn{font-size:16px;padding:13px 17px}
+.note{font-size:14px;line-height:1.55;padding:12px}
+.legend span{font-size:13px;padding:6px 10px}
+.suggestion{font-size:14px;padding:9px 12px}
+.paper{padding:25px}
+.paperhead{padding:20px}
+.paperhead .mini{font-size:12px}
+.paperhead h2{font-size:25px}
+.paperhead p{font-size:15px;line-height:1.55}
+.greeting{font-size:15px;line-height:1.65;padding:14px}
+.meta{font-size:14px;line-height:1.5}
+.pill{font-size:13px;padding:6px 10px;line-height:1.45}
+.block{padding:14px;margin:11px 0}
+.block h3{font-size:16px;line-height:1.5}
+.block p{font-size:14px;line-height:1.65}
+.footer{font-size:13px}
+.record{font-size:15px;padding:12px}
+@media(max-width:850px){
+ .hero h1{font-size:29px}
+ .ratings{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .rate{font-size:15px;min-height:46px}
+}
+@media print{
+ .paperhead .mini{font-size:12px}
+ .paperhead h2{font-size:24px}
+ .paperhead p{font-size:14px}
+ .greeting{font-size:14px}
+ .meta{font-size:13px}
+ .pill{font-size:12px}
+ .block h3{font-size:15px}
+ .block p{font-size:13px}
+ .footer{font-size:12px}
+}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+ <header class="hero">
+  <div class="kicker">LỚP 5A · ĐỒNG HÀNH CÙNG CON MỖI NGÀY</div>
+  <h1>NHẬN XÉT THƯỜNG XUYÊN</h1>
+  <p>Theo dõi kỹ năng, thói quen học tập và sự tiến bộ của học sinh</p>
+ </header>
+ <div class="tabs no-print">
+  <button class="tab active" data-tab="entry">✏️ Tạo nhận xét</button>
+  <button class="tab" data-tab="history">📚 Sổ theo dõi đã lưu</button>
+ </div>
+
+ <section id="entry" class="layout">
+  <div class="editor">
+   <div class="panel">
+    <h2>1. Thông tin học sinh</h2>
+    <div class="grid2">
+     <div class="field"><label for="student">Học sinh</label><select id="student"></select></div>
+     <div class="field"><label for="date">Ngày nhận xét</label><input type="date" id="date"></div>
+    </div>
+    <div class="field">
+     <label for="roster">Danh sách học sinh của lớp (mỗi dòng một tên)</label>
+     <textarea id="roster" rows="4" placeholder="Ví dụ:\nNguyễn An\nTrần Bình\nLê Chi"></textarea>
+     <div class="actions"><button type="button" class="btn secondary" id="saveRoster">Lưu danh sách học sinh trên thiết bị này</button></div>
+     <div class="note">Danh sách này chỉ lưu trên trình duyệt của giáo viên đang sử dụng, không được chia sẻ công khai và không đồng bộ sang thiết bị khác.</div>
+    </div>
+    <div class="field"><label for="intro">Lời dẫn – giao tiếp với Ba Mẹ</label><textarea id="intro">Ba Mẹ thân mến, Cô Minh gửi Ba Mẹ một vài ghi nhận thường xuyên về những kĩ năng và thói quen học tập của con. Mong Ba Mẹ cùng theo dõi và đồng hành để con ngày càng tự giác, chủ động và tiến bộ hơn.</textarea></div>
+    <div class="note">Đánh giá dựa trên hành vi có thể quan sát được, không dùng để xếp hạng học sinh. Chọn “Chưa quan sát” nếu hôm đó không có cơ hội đánh giá. Danh sách học sinh và phiếu nhận xét được lưu riêng trên trình duyệt của từng giáo viên.</div>
+   </div>
+   <div class="panel">
+    <h2>2. Theo dõi kỹ năng và thói quen</h2>
+    <div id="skills"></div>
+    <div class="note"><b>Thang theo dõi:</b><div class="legend"><span class="lg-green">Chủ động</span><span class="lg-yellow">Thực hiện tốt</span><span class="lg-pink">Cần nhắc nhở</span><span class="lg-red">Cần hỗ trợ</span><span class="lg-gray">Chưa quan sát</span></div></div>
+   </div>
+   <div class="panel">
+    <h2>3. Nhận xét và phối hợp</h2>
+    <div class="field"><label for="good">🌸 Hôm nay Cô Minh thấy con thể hiện tốt ở</label>
+     <div class="suggestions">
+      <button type="button" class="suggestion" data-target="good" data-text="Con chủ động sắp xếp và giữ gìn đồ dùng học tập gọn gàng.">Sắp xếp đồ dùng</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con chuẩn bị đầy đủ sách vở, dụng cụ học tập theo thời khóa biểu.">Chuẩn bị đồ dùng</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con tập trung lắng nghe và nghiêm túc thực hiện nhiệm vụ học tập.">Tập trung học tập</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con tích cực phát biểu, chia sẻ ý kiến xây dựng bài.">Phát biểu</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con tự tin trình bày và thuyết trình trước tập thể.">Thuyết trình</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con biết đặt câu hỏi để làm rõ nội dung và chủ động tìm hiểu vấn đề.">Đặt câu hỏi</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con biết lắng nghe, trao đổi và hợp tác tích cực với bạn.">Giao tiếp, hợp tác</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con hoàn thành nhiệm vụ đúng thời gian và có ý thức tự kiểm tra bài làm.">Hoàn thành nhiệm vụ</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con có tiến bộ trong kỹ năng tính toán và biết kiểm tra lại kết quả.">Kỹ năng tính toán</button>
+      <button type="button" class="suggestion" data-target="good" data-text="Con diễn đạt ý rõ ràng và trình bày bài viết ngày càng tốt.">Kỹ năng viết</button>
+     </div>
+     <textarea id="good" placeholder="Chọn các gợi ý phía trên hoặc tự nhập nhận xét của Cô Minh..."></textarea></div>
+    <div class="field"><label for="improve">🍂 Điểm cần cải thiện</label><textarea id="improve" placeholder="Nêu 1–2 kỹ năng con cần rèn thêm, tránh nhận xét chung chung..."></textarea></div>
+    <div class="field"><label for="strategy">🌱 Giải pháp Cô đang làm ở lớp</label>
+     <div class="suggestions">
+      <button type="button" class="suggestion" data-target="strategy" data-text="Cô cùng học 1:1 với con trong giờ ra chơi để hỗ trợ con củng cố kỹ năng và hoàn thành phần việc còn khó khăn.">Cô cùng học 1:1 với con giờ ra chơi</button>
+      <button type="button" class="suggestion" data-target="strategy" data-text="Cô đã giảng lại bài và hướng dẫn con từng bước để con hiểu cách thực hiện nhiệm vụ.">Cô đã giảng lại bài cho con</button>
+      <button type="button" class="suggestion" data-target="strategy" data-text="Con đã nhận thêm phiếu ôn tập từ Cô Minh để luyện tập và củng cố kỹ năng.">Con nhận thêm phiếu ôn tập</button>
+      <button type="button" class="suggestion" data-target="strategy" data-text="Cô sử dụng bảng kiểm để nhắc con tự chuẩn bị và kiểm tra đồ dùng học tập theo thời khóa biểu.">Dùng bảng kiểm đồ dùng</button>
+      <button type="button" class="suggestion" data-target="strategy" data-text="Cô sắp xếp bạn học hỗ trợ để con có thêm cơ hội trao đổi, thực hành và tự tin hơn.">Bố trí bạn học hỗ trợ</button>
+      <button type="button" class="suggestion" data-target="strategy" data-text="Cô giao nhiệm vụ theo từng bước nhỏ, theo dõi tiến độ và phản hồi kịp thời để con hoàn thành nhiệm vụ.">Chia nhỏ nhiệm vụ</button>
+     </div>
+     <textarea id="strategy" placeholder="Chọn một hoặc nhiều giải pháp, sau đó chỉnh sửa hoặc tự nhập cách hỗ trợ khác..."></textarea></div>
+    <div class="field"><label for="message">🤍 Lời nhắn từ Cô Minh gửi Ba Mẹ gửi Ba Mẹ</label>
+     <div class="suggestions">
+      <button type="button" class="suggestion" data-target="message" data-text="Nhờ Ba Mẹ nhắc con theo dõi kênh dặn dò của lớp (Padlet 5A Học thuật) mỗi ngày để không bỏ sót nhiệm vụ và thông tin quan trọng.">Theo dõi Padlet 5A Học thuật</button>
+      <button type="button" class="suggestion" data-target="message" data-text="Ba Mẹ khuyến khích con duy trì thói quen đọc thêm sách mỗi ngày và chia sẻ lại điều con yêu thích sau khi đọc.">Đọc thêm sách</button>
+      <button type="button" class="suggestion" data-target="message" data-text="Ba Mẹ vui lòng khuyến khích con tự soạn cặp theo thời khóa biểu vào buổi tối; Ba Mẹ có thể kiểm tra cùng con nhưng hãy để con tự thực hiện trước.">Tự soạn cặp theo thời khóa biểu</button>
+      <button type="button" class="suggestion" data-target="message" data-text="Mong Ba Mẹ dành thời gian hỏi thăm con về những việc con đã học và động viên con tự giác hoàn thành nhiệm vụ ở nhà.">Đồng hành cùng con tự học</button>
+      <button type="button" class="suggestion" data-target="message" data-text="Cảm ơn Ba Mẹ đã phối hợp cùng Cô Minh. Cô mong gia đình tiếp tục động viên để con duy trì những thói quen tích cực.">Cảm ơn Ba Mẹ đồng hành</button>
+     </div>
+     <textarea id="message" placeholder="Chọn lời nhắn gợi ý hoặc tự viết lời nhắn phù hợp với từng học sinh..."></textarea></div>
+    <div class="actions">
+     <button class="btn primary" id="save">Lưu nhận xét</button>
+     <button class="btn secondary" id="reset">Làm mới phiếu</button>
+     <button class="btn green" id="print">Xuất PDF / In phiếu</button>
+    </div>
+   </div>
+  </div>
+  <div class="panel preview">
+   <div class="paper" id="paper">
+    <div class="paperhead"><div class="mini">CLASS 5A · DAILY LEARNING JOURNAL</div><h2>NHẬN XÉT THƯỜNG XUYÊN</h2><p class="quote-top">“Chúng ta là những gì chúng ta thường xuyên làm. Sự hoàn hảo, vì thế, không phải là một hành động mà là một thói quen.”<br><b>— Aristotle</b></p></div>
+    <div class="meta"><span><b>Học sinh:</b> <span id="pStudent">Chưa chọn</span></span><span><b>Ngày:</b> <span id="pDate"></span></span></div>
+    <div class="greeting" id="pIntro"></div>
+    <h3>🌱 CÁC KỸ NĂNG ĐƯỢC THEO DÕI</h3>
+    <div id="pSkills" class="pillrow"></div>
+    <div class="block good"><h3>🌸 Hôm nay Cô Minh thấy con thể hiện tốt ở</h3><p id="pGood">Chưa nhập nhận xét.</p></div>
+    <div class="block improve"><h3>🍂 Điểm cần cải thiện</h3><p id="pImprove">Chưa nhập nhận xét.</p></div>
+    <div class="block strategy"><h3>🌱 Giải pháp Cô đang làm ở lớp</h3><p id="pStrategy">Chưa nhập nhận xét.</p></div>
+    <div class="block message"><h3>🤍 Lời nhắn từ Cô Minh gửi Ba Mẹ</h3><p id="pMessage">Cô Minh tin rằng với sự cố gắng mỗi ngày và sự đồng hành của Ba Mẹ, con sẽ ngày càng tự giác, chủ động hơn.</p></div>
+    <div class="footer">Cảm ơn Ba Mẹ đã luôn đồng hành cùng Cô Minh và con!</div>
+   </div>
+  </div>
+ </section>
+
+ <section id="history" class="panel history hidden">
+  <h2>Sổ theo dõi nhận xét đã lưu</h2>
+  <p class="note">Các nhận xét được lưu trên trình duyệt của thiết bị này. Dữ liệu không tự đồng bộ sang thiết bị khác.</p>
+  <div class="actions"><button class="btn secondary" id="exportData">Tải dữ liệu sao lưu (.json)</button><button class="btn danger" id="clearHistory">Xóa toàn bộ lịch sử</button></div>
+  <div id="records"></div>
+ </section>
+</div>
+<script>
+let students=[];
+const groups=[
+ {name:"1. Kỹ năng sắp xếp đồ dùng cá nhân",desc:"Ngăn nắp, giữ gìn và tự quản lý đồ dùng, không gian học tập.",items:["Sắp xếp bàn học và ngăn bàn gọn gàng","Cất sách vở, dụng cụ đúng vị trí sau khi sử dụng","Giữ gìn, bảo quản và không làm thất lạc đồ dùng","Thu dọn, kiểm tra đồ dùng trước khi rời lớp"]},
+ {name:"2. Kỹ năng chuẩn bị và soạn đồ dùng học tập",desc:"Chủ động chuẩn bị theo thời khóa biểu và yêu cầu từng hoạt động.",items:["Mang đủ sách, vở và tài liệu theo thời khóa biểu","Chuẩn bị đủ dụng cụ học tập cần thiết","Lấy đúng sách vở, mở đúng trang và sẵn sàng vào tiết","Tự kiểm tra, bổ sung đồ dùng mà không chờ nhắc"]},
+ {name:"3. Sự nghiêm túc, thái độ và tinh thần học tập",desc:"Tự giác, tập trung, kiên trì, hợp tác và có trách nhiệm.",items:["Vào lớp đúng giờ, nhanh chóng ổn định và bắt đầu học","Chú ý lắng nghe, hạn chế nói chuyện và làm việc riêng","Chủ động tham gia, trao đổi và đặt câu hỏi phù hợp","Tích cực phát biểu xây dựng bài","Tự tin thuyết trình, trình bày ý kiến trước tập thể","Kiên trì khi gặp nhiệm vụ khó, biết thử cách giải quyết","Lắng nghe, tôn trọng và hợp tác với bạn","Thực hiện hướng dẫn và chịu trách nhiệm với việc mình làm"]},
+ {name:"4. Kỹ năng thực hiện nhiệm vụ tại lớp",desc:"Quản lý thời gian, thực hiện yêu cầu và tự kiểm tra kết quả.",items:["Bắt đầu nhiệm vụ sau khi nhận hướng dẫn","Hoàn thành công việc trong thời gian phù hợp","Thực hiện đủ các bước và yêu cầu của nhiệm vụ","Tự rà soát, điều chỉnh và nộp sản phẩm đúng quy định"]},
+ {name:"5. Kỹ năng tự học và hoàn thành nhiệm vụ tại nhà",desc:"Tự quản lý việc học ở nhà; thông tin cần được phối hợp xác nhận với gia đình.",items:["Ghi nhớ và hiểu nhiệm vụ được giao về nhà","Chủ động sắp xếp thời gian và bắt đầu làm bài","Hoàn thành, kiểm tra và nộp bài đúng thời hạn","Tự chuẩn bị sách vở, đồ dùng cho ngày học tiếp theo"]},
+ {name:"6. Các kỹ năng học tập đặc thù",desc:"Quan sát cách học sinh vận dụng kỹ năng trong hoạt động học tập; không đánh giá kiến thức đơn thuần.",items:["Kỹ năng tính toán: lựa chọn cách tính, thực hiện và kiểm tra kết quả","Kỹ năng viết: diễn đạt ý rõ ràng, viết đúng yêu cầu và tự rà soát","Kỹ năng thuyết trình: trình bày mạch lạc, tự tin, biết sử dụng dẫn chứng hoặc hình ảnh","Kỹ năng đặt câu hỏi: biết nêu câu hỏi phù hợp để làm rõ vấn đề","Kỹ năng giao tiếp, trao đổi trong học tập: biết lắng nghe, phản hồi và chia sẻ ý kiến"]}
+];
+const levels=["Chủ động","Thực hiện tốt","Cần nhắc nhở","Cần hỗ trợ","Chưa quan sát"];
+const student=document.getElementById('student');
+const rosterInput=document.getElementById('roster');
+function loadRoster(){
+ try{students=JSON.parse(localStorage.getItem('nhanXet5A_roster')||'[]')}catch(e){students=[]}
+ rosterInput.value=students.join('\n');
+ refreshStudentOptions();
+}
+function refreshStudentOptions(selected=''){
+ student.innerHTML='';
+ student.add(new Option(students.length?'-- Chọn học sinh --':'-- Hãy nhập danh sách học sinh bên dưới --',''));
+ students.forEach(name=>student.add(new Option(name,name)));
+ if(selected && !students.includes(selected)){students.push(selected);student.add(new Option(selected,selected))}
+ if(selected)student.value=selected;
+}
+document.getElementById('saveRoster').addEventListener('click',()=>{
+ const names=[...new Set(rosterInput.value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))];
+ if(!names.length){alert('Cô vui lòng nhập ít nhất một tên học sinh.');return}
+ students=names;
+ localStorage.setItem('nhanXet5A_roster',JSON.stringify(students));
+ refreshStudentOptions(students[0]);
+ alert('Đã lưu danh sách học sinh riêng trên trình duyệt này.');
+ updatePreview();
+});
+loadRoster();
+document.getElementById('date').value=new Date().toISOString().slice(0,10);
+let state={};
+function buildSkills(){
+ const root=document.getElementById('skills');root.innerHTML='';
+ groups.forEach((g,gi)=>{
+  const box=document.createElement('div');box.className='skill';
+  box.innerHTML=`<div class="skillhead"><strong>${g.name}</strong></div><small>${g.desc}</small>`;
+  g.items.forEach((it,ii)=>{
+   const key=`${gi}-${ii}`;const row=document.createElement('div');row.style.margin='10px 0';
+   row.innerHTML=`<div style="font-size:13px;margin-bottom:6px">${it}</div><div class="ratings">${levels.map((l,li)=>`<button type="button" class="rate ${state[key]===li?'selected':''}" data-key="${key}" data-level="${li}">${l}</button>`).join('')}</div>`;
+   box.appendChild(row);
+  });root.appendChild(box);
+ });
+ root.querySelectorAll('.rate').forEach(b=>b.addEventListener('click',()=>{state[b.dataset.key]=Number(b.dataset.level);buildSkills();updatePreview()}));
+}
+function val(id){return document.getElementById(id).value.trim()}
+function niceDate(d){if(!d)return '';let [y,m,day]=d.split('-');return `${day}/${m}/${y}`}
+function updatePreview(){
+ document.getElementById('pStudent').textContent=student.value||'Chưa chọn';
+ document.getElementById('pDate').textContent=niceDate(val('date'));
+ document.getElementById('pIntro').textContent=val('intro');
+ document.getElementById('pGood').textContent=val('good')||'Chưa nhập nhận xét.';
+ document.getElementById('pImprove').textContent=val('improve')||'Chưa nhập nhận xét.';
+ document.getElementById('pStrategy').textContent=val('strategy')||'Chưa nhập nhận xét.';
+ document.getElementById('pMessage').textContent=val('message')||'Cô Minh tin rằng với sự cố gắng mỗi ngày và sự đồng hành của Ba Mẹ, con sẽ ngày càng tự giác, chủ động hơn.';
+ const chips=[];
+ groups.forEach((g,gi)=>{let chosen=[];g.items.forEach((it,ii)=>{let v=state[`${gi}-${ii}`];if(v!==undefined)chosen.push(`<span class="pill status-${v}">${it}: ${levels[v]}</span>`)});if(chosen.length)chips.push(`<div style="width:100%;margin:2px 0 7px"><b>${g.name}</b><br>${chosen.join(' ')}</div>`)});
+ document.getElementById('pSkills').innerHTML=chips.join('')||'<span class="pill">Chưa đánh giá kỹ năng</span>';
+}
+document.querySelectorAll('input,textarea,select').forEach(el=>el.addEventListener('input',updatePreview));
+student.addEventListener('change',updatePreview);
+document.querySelectorAll('.suggestion').forEach(btn=>btn.addEventListener('click',()=>{
+ const target=document.getElementById(btn.dataset.target), phrase=btn.dataset.text;
+ const current=target.value.trim();
+ if(!current) target.value=phrase;
+ else if(!current.includes(phrase)) target.value=current+(current.endsWith('.')?' ':'; ')+phrase;
+ updatePreview();
+}));
+buildSkills();updatePreview();
+document.getElementById('print').onclick=()=>{updatePreview();window.print()};
+document.getElementById('reset').onclick=()=>{['good','improve','strategy','message'].forEach(id=>document.getElementById(id).value='');state={};buildSkills();updatePreview()};
+function getRecord(){return {id:Date.now(),student:student.value,date:val('date'),intro:val('intro'),state:{...state},good:val('good'),improve:val('improve'),strategy:val('strategy'),message:val('message')}}
+function getRecords(){try{return JSON.parse(localStorage.getItem('nhanXet5A')||'[]')}catch(e){return []}}
+function saveRecords(a){localStorage.setItem('nhanXet5A',JSON.stringify(a))}
+document.getElementById('save').onclick=()=>{let a=getRecords();a.unshift(getRecord());saveRecords(a);alert('Đã lưu nhận xét trên trình duyệt này.');renderRecords()};
+function renderRecords(){let root=document.getElementById('records'),a=getRecords();root.innerHTML='';if(!a.length){root.innerHTML='<p>Chưa có phiếu nhận xét nào được lưu.</p>';return}
+ a.forEach(r=>{let d=document.createElement('div');d.className='record';d.innerHTML=`<div><b>${r.student}</b><div style="font-size:12px;color:#687b8e">${niceDate(r.date)}</div></div><div class="actions"><button class="btn secondary" data-open="${r.id}">Mở phiếu</button><button class="btn danger" data-del="${r.id}">Xóa</button></div>`;root.appendChild(d)});
+ root.querySelectorAll('[data-open]').forEach(b=>b.onclick=()=>{let r=getRecords().find(x=>x.id==b.dataset.open);loadRecord(r);showTab('entry')});
+ root.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{saveRecords(getRecords().filter(x=>x.id!=b.dataset.del));renderRecords()});
+}
+function loadRecord(r){refreshStudentOptions(r.student);student.value=r.student;document.getElementById('date').value=r.date;['intro','good','improve','strategy','message'].forEach(k=>document.getElementById(k).value=r[k]||'');state=r.state||{};buildSkills();updatePreview()}
+function showTab(t){document.getElementById('entry').classList.toggle('hidden',t!=='entry');document.getElementById('history').classList.toggle('hidden',t!=='history');document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===t));if(t==='history')renderRecords()}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+document.getElementById('exportData').onclick=()=>{let blob=new Blob([JSON.stringify(getRecords(),null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='so-theo-doi-nhan-xet-lop-5A.json';a.click();URL.revokeObjectURL(a.href)};
+document.getElementById('clearHistory').onclick=()=>{if(confirm('Bạn có chắc muốn xóa toàn bộ lịch sử?')){saveRecords([]);renderRecords()}};
+</script>
+</body>
+</html>
